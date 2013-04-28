@@ -70,3 +70,41 @@ A B C
 [2,] 2 4 6
 > 
 ```
+
+# other sample codes
+```
+# Positive FixNum
+> a <- 100
+> pack(a)
+[1] 64
+> unpack_bin(pack(a))
+[1] 100
+
+# uint16
+> a <- 2^10
+> pack(a)
+[1] cd 04 00
+> unpack_bin(pack(a))
+[1] 1024
+
+# int16
+> a <- -2^10
+> pack(a)
+[1] d1 fc 00
+> unpack_bin(pack(a))
+[1] -1024
+
+# double
+> a <- 10.1
+> pack(a)
+[1] cb 40 24 33 33 33 33 33 33
+> unpack_bin(pack(a))
+[1] 10.1
+
+# FixRaw
+> a <- "sample character"
+> pack(a)
+ [1] b0 73 61 6d 70 6c 65 20 63 68 61 72 61 63 74 65 72
+> unpack_bin(pack(a))
+[1] "sample character"
+```
